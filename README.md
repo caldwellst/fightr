@@ -5,6 +5,11 @@ fightr
 ======
 
 <!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/caldwellst/fightr.svg?branch=master)](https://travis-ci.com/caldwellst/fightr)
+[![R build
+status](https://github.com/caldwellst/fightr/workflows/R-CMD-check/badge.svg)](https://github.com/caldwellst/fightr/actions)
 <!-- badges: end -->
 
 The goal of fightr is to enable quick and reproducible wrangling and
