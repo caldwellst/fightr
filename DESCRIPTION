@@ -25,3 +25,5 @@ Imports:
     magrittr,
     readr,
     rlang
+URL: https://github.com/caldwellst/fightr
+BugReports: https://github.com/caldwellst/fightr/issues
