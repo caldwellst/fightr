@@ -1,0 +1,27 @@
+Package: fightr
+Title: Tools for Fight for Peace Data
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Seth",
+             family = "Caldwell",
+             role = c("aut", "cre"),
+             email = "caldwellst@gmail.com"),
+      person(given = "Will",
+             family = "Woordward",
+             role = c("aut"),
+             email = "wlm.woodward@gmail.com"))
+Description: What the package does (one paragraph).
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    chron,
+    dplyr,
+    tidyr,
+    readxl,
+    janitor,
+    magrittr,
+    readr,
+    rlang
