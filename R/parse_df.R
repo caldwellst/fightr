@@ -36,10 +36,23 @@ parse_session_df <- function(df) {
   session_df %>%
     tidyr::pivot_longer(-1) %>%
     tidyr::pivot_wider(names_from = 1) %>%
-    dplyr::mutate(dplyr::across(c("Location ID", "Duration (hrs)", "Date", "Start time", "Session ID", "Total (participants attended)"),
+    dplyr::rename("project" = "Project",
+                  "activity_group" := "Activity group",
+                  "activity" := "Activity",
+                  "title" = "Title",
+                  "location_id" = "Location ID",
+                  "date" = "Date",
+                  "start_time" = "Start time",
+                  "duration_hrs" = "Duration (hrs)",
+                  "status" = "Status",
+                  "session_id" = "Session ID",
+                  "total_attendance" = "Total (participants attended)")
+    dplyr::mutate(dplyr::across(c("location_id", "duration_hrs", "date", "start_time", "session_id", "total_attended"),
                                 as.numeric),
-                  "Date" := as.Date(.data[["Date"]], origin = "1899-12-30"),
-                  "Start time" = chron::as.times(.data[["Start time"]])) %>%
+                  "data" := as.Date(.data[["date"]], origin = "1899-12-30"),
+                  "year" := lubridate::year(.data[["date"]]),
+                  "month" := lubridate::month(.data[["month"]]),
+                  "start_time" = chron::as.times(.data[["start_time"]])) %>%
     dplyr::select(-"name")
 }
 
@@ -75,8 +88,13 @@ parse_attendee_df <- function(df) {
   ) %>% unname
 
   attendee_df[-c(1:2),] %>%
-    readr::type_convert() %>%
-    dplyr::mutate(dplyr::across(c("DOB", "Registered", "Added to Upshot", "First session", "Last session"),
+    dplyr::rename("attendee_id" = "Attendee ID",
+                  "sessions_attended" = "Total (sessions attended)",
+                  "time_attended_mins" = "Total (mins)",
+                  "time_attended_hrs" = "Total (hours)",
+                  )
+    dplyr::mutate(dplyr::across(c("")),
+                  dplyr::across(c("DOB", "Registered", "Added to Upshot", "First session", "Last session"),
                                 as.Date,
                                 origin = "1899-12-30"))
 }

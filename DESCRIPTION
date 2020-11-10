@@ -27,3 +27,5 @@ Imports:
     rlang
 URL: https://github.com/caldwellst/fightr
 BugReports: https://github.com/caldwellst/fightr/issues
+Depends: 
+    R (>= 2.10)
