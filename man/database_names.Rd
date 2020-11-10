@@ -10,6 +10,7 @@ A data frame with 134 rows and 4 variables:
 \item{table}{Table that the name is found in. Either "session", "attendance", and "attendees".}
 \item{col_names}{Original names found in the FFP databases.}
 \item{col_codes}{Corresponding column codes for use when parsing FFP database files.}
+\item{type}{Column type for parsing the relevant columns.}
 }
 }
 \usage{

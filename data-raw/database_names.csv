@@ -98,7 +98,7 @@ attendees,Referral form: Current symptom/ Concerns,,c
 attendees,Referral form: Current symptoms/ Concerns,,c
 attendees,Referral form: Current symptoms/Concerns,,c
 attendees,Referral form: Other medical concerns note,,c
-attendees,Registered,registration_date,D
+attendees,Registered,registered,D
 attendees,Registration Date,registration_date,D
 attendees,Religion or faith,religion,c
 attendees,School/College/University,edu_institution,c
@@ -106,7 +106,7 @@ attendees,Session notes,session_notes,c
 attendees,Sexual orientation,sexual_orientation,c
 attendees,Specific medical conditions,specific_medical_conditions,c
 attendees,Sport Consent (under 18s only),sport_consent,c
-attendees,Staff member inducting,staff_member,c
+attendees,Staff member inducting,staff_member_inducting,c
 attendees,Staff member?,staff_member,c
 attendees,Telephone,telephone,c
 attendees,Total (hours),total_hrs,d
