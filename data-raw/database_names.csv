@@ -1,135 +1,135 @@
-table,col_names,col_codes
-attendance,Attendance ID,attendee_id
-attendance,Session ID,session_id
-attendees,Accreditation,accrediation
-attendees,Added to Upshot,added_to_upshot
-attendees,Additional medical conditions,
-attendees,Address line 1,address_line_1
-attendees,Address line 2,address_line_2
-attendees,Address line 3,address_line_3
-attendees,Age range,age_range
-attendees,Age Range,age_range
-attendees,Are you a member of any other clubs in the community?,other_club_member
-attendees,Are you currently enrolled in education or training?,edu_enrolled
-attendees,Are you currently working?,employed
-attendees,Are you in employment?,employed
-attendees,Attendee ID,attendee_id
-attendees,Attendee type,attendee_type
-attendees,Attendee Type,attendee_type
-attendees,Authority,authority
-attendees,Case study consent,case_study_consent
-attendees,Constituency,constituency
-attendees,Contact first name,contact_first_name
-attendees,Contact last name,contact_last_name
-attendees,Contact relationship,contact_relationship
-attendees,Contact Type,contact_type
-attendees,County,county
-attendees,Current Employment Status,employed
-attendees,Current employment status:,employed
-attendees,Current level/grade enrolled in,edu_grade
-attendees,Current level/grade enrolled in?,edu_grade
-attendees,Currently enrolled in education or training,edu_type
-attendees,Currently enrolled in education or training?,edu_type
-attendees,Disability,disability
-attendees,Disability note,disability_note
-attendees,District,district
-attendees,DOB,dob
-attendees,Edubase URN,edubase_urn
-attendees,Education grade level,edu_grade
-attendees,Education Grade Level,edu_grade
-attendees,Email,email
-attendees,Emergency contact details,contact_details
-attendees,Ethnicity,ethnicity
-attendees,FA number,fa_number
-attendees,FFP ID (for staff to complete),ffp_id
-attendees,First session,first_session
-attendees,Gender,gender
-attendees,Has permission: Publish,permission_publish
-attendees,Has permission: Receive info,permission_receive_info
-attendees,Has permission: Receive surveys,permission_receive_surveys
-attendees,Have you received any help or support in the past?,received_help
-attendees,Home Community (if not DT):,home_community
-attendees,Home Community (if not FL):,home_community
-attendees,Home Community (if not PG):,home_community
-attendees,Home Community (if not TG):,home_community
-attendees,Home Community (if not TT):,home_community
-attendees,How did you hear about our programmes?,how_hear_ffp
-attendees,How many exercise sessions have you done in the past 4 weeks?,exercise_sess_past_month
-attendees,Identifying notes,identifying_notes
-attendees,"If other services, please specify",other_services_specify
-attendees,"If other, please describe",
-attendees,"If other, please describe:",
-attendees,"If other, please specify",
-attendees,"If other, please specify:",
-attendees,"If you are currently in education, what type of education?",edu_type
-attendees,IMD percent,imd_percent
-attendees,IMD rank,imd_rank
-attendees,Is there anything else you feel we should know about you?,other_info
-attendees,Last session,last_session
-attendees,Latitude,latitude
-attendees,Longitude,longitude
-attendees,LSOA code,lsoa_code
-attendees,Membership ID/number,membership_id
-attendees,Mobile,mobile
-attendees,Name of education provider,edu_name
-attendees,Name of education provider:,
-attendees,No. of exercise sessions of 30 mins or more in past month?,exercise_sess_past_month
-attendees,No. of exercise sessions of 30 minutes or more in the past month,exercise_sess_past_month
-attendees,No. of exercise sessions of 30 minutes or more past month,exercise_sess_past_month
-attendees,No. of exercise sessions of 30 minutes or more past month?,exercise_sess_past_month
-attendees,No.of exercise sessions of 30 mins or more in past mnth?,exercise_sess_past_month
-attendees,Other description,
-attendees,Other description:,
-attendees,Other education description,
-attendees,Other education description:,
-attendees,Other work description,
-attendees,Other work description:,
-attendees,Outreach member,outreach_member
-attendees,Par-Q Form,par_q_form
-attendees,Parent/guardian/carer,parent_guardian
-attendees,Partner,partner
-attendees,Personal data processing consent,
-attendees,Photography consent,photog_consent
-attendees,Photography/film consent,photog_consent
-attendees,Photography/Film Consent,photog_consent
-attendees,Postcode,postcode
-attendees,Referral form: Current situation,
-attendees,Referral form: Current symptom/ Concerns,
-attendees,Referral form: Current symptoms/ Concerns,
-attendees,Referral form: Current symptoms/Concerns,
-attendees,Referral form: Other medical concerns note,
-attendees,Registered,registered
-attendees,Registration Date,registration_date
-attendees,Religion or faith,religion
-attendees,School/College/University,edu_institution
-attendees,Session notes,session_notes
-attendees,Sexual orientation,sexual_orientation
-attendees,Specific medical conditions,specific_medical_conditions
-attendees,Sport Consent (under 18s only),sport_consent
-attendees,Staff member inducting,staff_member
-attendees,Staff member?,staff_member
-attendees,Telephone,telephone
-attendees,Total (hours),total_hrs
-attendees,Total (mins),total_mins
-attendees,Total (sessions attended),total_sessions
-attendees,Town,town
-attendees,Type,type
-attendees,Under 18 years,under_18
-attendees,Upload Number (Upshot use only),upload_number
-attendees,Waiver/release of liability,waiver
-attendees,Ward,ward
-attendees,Would you like help getting back into education or finding work,job_seek_help
-attendees,Youth Council information,youth_council_info
-session,Activity,activity
-session,Activity group,activity_group
-session,Date,date
-session,Duration (hrs),duration_hrs
-session,Location,location
-session,Location ID,location_id
-session,Project,project
-session,Session ID,session_id
-session,Start time,start_time
-session,Status,status
-session,Tags,tags
-session,Title,title
-session,Total (participants attended),total_participants
+table,col_names,col_codes,type
+attendance,Attendance ID,attendee_id,d
+attendance,Session ID,session_id,d
+attendees,Accreditation,accrediation,c
+attendees,Added to Upshot,added_to_upshot,D
+attendees,Additional medical conditions,,
+attendees,Address line 1,address_line_1,c
+attendees,Address line 2,address_line_2,c
+attendees,Address line 3,address_line_3,c
+attendees,Age range,age_range,c
+attendees,Age Range,age_range,c
+attendees,Are you a member of any other clubs in the community?,other_club_member,c
+attendees,Are you currently enrolled in education or training?,edu_enrolled,c
+attendees,Are you currently working?,employed,c
+attendees,Are you in employment?,employed,c
+attendees,Attendee ID,attendee_id,d
+attendees,Attendee type,attendee_type,c
+attendees,Attendee Type,attendee_type,c
+attendees,Authority,authority,c
+attendees,Case study consent,case_study_consent,c
+attendees,Constituency,constituency,c
+attendees,Contact first name,contact_first_name,c
+attendees,Contact last name,contact_last_name,c
+attendees,Contact relationship,contact_relationship,c
+attendees,Contact Type,contact_type,c
+attendees,County,county,c
+attendees,Current Employment Status,employed,c
+attendees,Current employment status:,employed,c
+attendees,Current level/grade enrolled in,edu_grade,c
+attendees,Current level/grade enrolled in?,edu_grade,c
+attendees,Currently enrolled in education or training,edu_type,c
+attendees,Currently enrolled in education or training?,edu_type,c
+attendees,Disability,disability,c
+attendees,Disability note,disability_note,c
+attendees,District,district,c
+attendees,DOB,dob,D
+attendees,Edubase URN,edubase_urn,c
+attendees,Education grade level,edu_grade,c
+attendees,Education Grade Level,edu_grade,c
+attendees,Email,email,c
+attendees,Emergency contact details,contact_details,c
+attendees,Ethnicity,ethnicity,c
+attendees,FA number,fa_number,c
+attendees,FFP ID (for staff to complete),ffp_id,c
+attendees,First session,first_session,c
+attendees,Gender,gender,c
+attendees,Has permission: Publish,permission_publish,c
+attendees,Has permission: Receive info,permission_receive_info,c
+attendees,Has permission: Receive surveys,permission_receive_surveys,c
+attendees,Have you received any help or support in the past?,received_help,c
+attendees,Home Community (if not DT):,home_community,c
+attendees,Home Community (if not FL):,home_community,c
+attendees,Home Community (if not PG):,home_community,c
+attendees,Home Community (if not TG):,home_community,c
+attendees,Home Community (if not TT):,home_community,c
+attendees,How did you hear about our programmes?,how_hear_ffp,c
+attendees,How many exercise sessions have you done in the past 4 weeks?,exercise_sess_past_month,c
+attendees,Identifying notes,identifying_notes,c
+attendees,"If other services, please specify",other_services_specify,c
+attendees,"If other, please describe",,
+attendees,"If other, please describe:",,
+attendees,"If other, please specify",,
+attendees,"If other, please specify:",,
+attendees,"If you are currently in education, what type of education?",edu_type,c
+attendees,IMD percent,imd_percent,c
+attendees,IMD rank,imd_rank,c
+attendees,Is there anything else you feel we should know about you?,other_info,c
+attendees,Last session,last_session,c
+attendees,Latitude,latitude,d
+attendees,Longitude,longitude,d
+attendees,LSOA code,lsoa_code,c
+attendees,Membership ID/number,membership_id,
+attendees,Mobile,mobile,c
+attendees,Name of education provider,edu_name,c
+attendees,Name of education provider:,edu_name,c
+attendees,No. of exercise sessions of 30 mins or more in past month?,exercise_sess_past_month,c
+attendees,No. of exercise sessions of 30 minutes or more in the past month,exercise_sess_past_month,c
+attendees,No. of exercise sessions of 30 minutes or more past month,exercise_sess_past_month,c
+attendees,No. of exercise sessions of 30 minutes or more past month?,exercise_sess_past_month,c
+attendees,No.of exercise sessions of 30 mins or more in past mnth?,exercise_sess_past_month,c
+attendees,Other description,,
+attendees,Other description:,,
+attendees,Other education description,,
+attendees,Other education description:,,
+attendees,Other work description,,
+attendees,Other work description:,,
+attendees,Outreach member,outreach_member,c
+attendees,Par-Q Form,par_q_form,c
+attendees,Parent/guardian/carer,parent_guardian,c
+attendees,Partner,partner,c
+attendees,Personal data processing consent,,c
+attendees,Photography consent,photog_consent,c
+attendees,Photography/film consent,photog_consent,c
+attendees,Photography/Film Consent,photog_consent,c
+attendees,Postcode,postcode,c
+attendees,Referral form: Current situation,,c
+attendees,Referral form: Current symptom/ Concerns,,c
+attendees,Referral form: Current symptoms/ Concerns,,c
+attendees,Referral form: Current symptoms/Concerns,,c
+attendees,Referral form: Other medical concerns note,,c
+attendees,Registered,registration_date,D
+attendees,Registration Date,registration_date,D
+attendees,Religion or faith,religion,c
+attendees,School/College/University,edu_institution,c
+attendees,Session notes,session_notes,c
+attendees,Sexual orientation,sexual_orientation,c
+attendees,Specific medical conditions,specific_medical_conditions,c
+attendees,Sport Consent (under 18s only),sport_consent,c
+attendees,Staff member inducting,staff_member,c
+attendees,Staff member?,staff_member,c
+attendees,Telephone,telephone,c
+attendees,Total (hours),total_hrs,d
+attendees,Total (mins),total_mins,d
+attendees,Total (sessions attended),total_sessions,d
+attendees,Town,town,c
+attendees,Type,type,c
+attendees,Under 18 years,under_18,c
+attendees,Upload Number (Upshot use only),upload_number,c
+attendees,Waiver/release of liability,waiver,c
+attendees,Ward,ward,c
+attendees,Would you like help getting back into education or finding work,job_seek_help,c
+attendees,Youth Council information,youth_council_info,c
+session,Activity,activity,c
+session,Activity group,activity_group,c
+session,Date,date,D
+session,Duration (hrs),duration_hrs,d
+session,Location,location,c
+session,Location ID,location_id,d
+session,Project,project,c
+session,Session ID,session_id,d
+session,Start time,start_time,T
+session,Status,status,c
+session,Tags,tags,c
+session,Title,title,c
+session,Total (participants attended),total_participants,d

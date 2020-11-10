@@ -24,7 +24,8 @@ Imports:
     janitor,
     magrittr,
     readr,
-    rlang
+    rlang,
+    purrr
 URL: https://github.com/caldwellst/fightr
 BugReports: https://github.com/caldwellst/fightr/issues
 Depends: 

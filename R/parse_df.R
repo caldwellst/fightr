@@ -1,6 +1,6 @@
 #' Parse Excel export from the Fight for Peace database
 #'
-#' `parse_ffp_database()` parses the Fight for Peace database export (from Excel)
+#' `parse_single_database()` parses the Fight for Peace database export (from Excel)
 #' format into three separate frames, one for attendees, one for sessions, and
 #' one linking attendees to sessions attended.
 #'
@@ -13,7 +13,7 @@
 #'     attendees: data frame of attendee details
 #'
 #' @export
-parse_ffp_database <- function(path) {
+parse_single_database <- function(path) {
   raw_df <- suppressMessages(readxl::read_excel(path))
 
   session_df <- parse_session_df(raw_df)
@@ -36,24 +36,14 @@ parse_session_df <- function(df) {
   session_df %>%
     tidyr::pivot_longer(-1) %>%
     tidyr::pivot_wider(names_from = 1) %>%
-    dplyr::rename("project" = "Project",
-                  "activity_group" := "Activity group",
-                  "activity" := "Activity",
-                  "title" = "Title",
-                  "location_id" = "Location ID",
-                  "date" = "Date",
-                  "start_time" = "Start time",
-                  "duration_hrs" = "Duration (hrs)",
-                  "status" = "Status",
-                  "session_id" = "Session ID",
-                  "total_attendance" = "Total (participants attended)")
-    dplyr::mutate(dplyr::across(c("location_id", "duration_hrs", "date", "start_time", "session_id", "total_attended"),
-                                as.numeric),
-                  "data" := as.Date(.data[["date"]], origin = "1899-12-30"),
-                  "year" := lubridate::year(.data[["date"]]),
-                  "month" := lubridate::month(.data[["month"]]),
-                  "start_time" = chron::as.times(.data[["start_time"]])) %>%
     dplyr::select(-"name")
+
+  session_df <- convert_table(session_df, table = "sessions")
+  session_df %>% dplyr::mutate(dplyr::across(c("location_id", "duration_hrs", "date", "start_time", "session_id", "total_participants"),
+                                             as.numeric),
+                               "date" := as.Date(.data[["date"]], origin = "1899-12-30"),
+                               "start_time" = chron::as.times(.data[["start_time"]]))
+
 }
 
 #' @noRd
@@ -71,7 +61,8 @@ parse_attendance_df <- function(df) {
     tidyr::pivot_longer(-"Attendance ID",
                         names_to = "Session ID") %>%
     dplyr::filter(!is.na(.data[["value"]])) %>%
-    dplyr::select(-"value")
+    dplyr::select(-"value") %>%
+    convert_table(table = "attendance")
 }
 
 #' @noRd
@@ -88,13 +79,9 @@ parse_attendee_df <- function(df) {
   ) %>% unname
 
   attendee_df[-c(1:2),] %>%
-    dplyr::rename("attendee_id" = "Attendee ID",
-                  "sessions_attended" = "Total (sessions attended)",
-                  "time_attended_mins" = "Total (mins)",
-                  "time_attended_hrs" = "Total (hours)",
-                  )
-    dplyr::mutate(dplyr::across(c("")),
-                  dplyr::across(c("DOB", "Registered", "Added to Upshot", "First session", "Last session"),
+    convert_table(table = "attendees") %>%
+    readr::type_convert() %>%
+    dplyr::mutate(dplyr::across(c("dob", "registered", "added_to_upshot", "first_session", "last_session"),
                                 as.Date,
                                 origin = "1899-12-30"))
 }
