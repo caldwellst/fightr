@@ -33,7 +33,7 @@ parse_session_df <- function(df) {
   session_df <- df[c(proj_ind:sess_ind, attendance_ind),
                    !is.na(unlist(df[proj_ind,]))]
 
-  session_df %>%
+  session_df <- session_df %>%
     tidyr::pivot_longer(-1) %>%
     tidyr::pivot_wider(names_from = 1) %>%
     dplyr::select(-"name")
@@ -70,18 +70,18 @@ parse_attendee_df <- function(df) {
   attendee_ind <- which(df[[4]] == "Attendee ID")
   attendance_ind <- which(df[[4]] == "Total (participants attended)")
 
-  attendee_df <- df[(attendee_ind - 1):attendance_ind,4:ncol(df)]
+  attendee_df <- df[(attendee_ind - 1):(attendance_ind - 1),4:ncol(df)]
   attendee_df <- attendee_df[,!is.na(unlist(attendee_df[1,])) | !is.na(unlist(attendee_df[2,]))]
 
   names(attendee_df) <- dplyr::case_when(
-    !is.na(unlist(attendee_df[1,])) ~ unlist(attendee_df[1,]),
-    !is.na(unlist(attendee_df[2,])) ~ unlist(attendee_df[2,])
+    !is.na(unlist(attendee_df[2,])) ~ unlist(attendee_df[2,]),
+    !is.na(unlist(attendee_df[1,])) ~ unlist(attendee_df[1,])
   ) %>% unname
 
   attendee_df[-c(1:2),] %>%
     convert_table(table = "attendees") %>%
     readr::type_convert() %>%
-    dplyr::mutate(dplyr::across(c("dob", "registered", "added_to_upshot", "first_session", "last_session"),
+    dplyr::mutate(dplyr::across(dplyr::any_of(c("dob", "registered", "added_to_upshot", "first_session", "last_session")),
                                 as.Date,
                                 origin = "1899-12-30"))
 }
