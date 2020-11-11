@@ -26,7 +26,8 @@ Imports:
     readr,
     rlang,
     purrr,
-    tibble
+    tibble,
+    lubridate
 URL: https://github.com/caldwellst/fightr
 BugReports: https://github.com/caldwellst/fightr/issues
 Depends: 
