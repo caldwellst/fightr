@@ -10,7 +10,7 @@ Authors@R:
              family = "Woordward",
              role = c("aut"),
              email = "wlm.woodward@gmail.com"))
-Description: What the package does (one paragraph).
+Description: Provides tools to parse and analyze data from FFP databases.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
