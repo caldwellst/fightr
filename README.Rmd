@@ -41,5 +41,5 @@ Currently, you can parse the database Excel output only, but more to come.
 ``` r
 library(fightr)
 
-parse_ffp_database("filepath.xlsx")
+parse_single_database("filepath.xlsx")
 ```

@@ -2,7 +2,7 @@ table,col_names,col_codes,type
 attendance,Attendance ID,attendee_id,d
 attendance,Session ID,session_id,d
 attendees,Accreditation,accrediation,c
-attendees,Added to Upshot,added_to_upshot,d
+attendees,Added to Upshot,added_to_upshot,D
 attendees,Additional medical conditions,,
 attendees,Address line 1,address_line_1,c
 attendees,Address line 2,address_line_2,c
@@ -26,23 +26,23 @@ attendees,Contact Type,contact_type,c
 attendees,County,county,c
 attendees,Current Employment Status,employed,c
 attendees,Current employment status:,employed,c
-attendees,Current level/grade enrolled in,edu_grade,c
-attendees,Current level/grade enrolled in?,edu_grade,c
+attendees,Current level/grade enrolled in,enrolled_edu_grade,c
+attendees,Current level/grade enrolled in?,enrolled_edu_grade,c
 attendees,Currently enrolled in education or training,edu_type,c
 attendees,Currently enrolled in education or training?,edu_type,c
 attendees,Disability,disability,c
 attendees,Disability note,disability_note,c
 attendees,District,district,c
-attendees,DOB,dob,d
+attendees,DOB,dob,D
 attendees,Edubase URN,edubase_urn,c
-attendees,Education grade level,edu_grade,c
-attendees,Education Grade Level,edu_grade,c
+attendees,Education grade level,edu_grade_level,c
+attendees,Education Grade Level,edu_grade_level,c
 attendees,Email,email,c
 attendees,Emergency contact details,contact_details,c
 attendees,Ethnicity,ethnicity,c
 attendees,FA number,fa_number,c
 attendees,FFP ID (for staff to complete),ffp_id,c
-attendees,First session,first_session,c
+attendees,First session,first_session,D
 attendees,Gender,gender,c
 attendees,Has permission: Publish,permission_publish,c
 attendees,Has permission: Receive info,permission_receive_info,c
@@ -54,7 +54,7 @@ attendees,Home Community (if not PG):,home_community,c
 attendees,Home Community (if not TG):,home_community,c
 attendees,Home Community (if not TT):,home_community,c
 attendees,How did you hear about our programmes?,how_hear_ffp,c
-attendees,How many exercise sessions have you done in the past 4 weeks?,exercise_sess_past_month,c
+attendees,How many exercise sessions have you done in the past 4 weeks?,exercise_sess_past_month,cd
 attendees,Identifying notes,identifying_notes,c
 attendees,"If other services, please specify",other_services_specify,c
 attendees,"If other, please describe",,
@@ -65,7 +65,7 @@ attendees,"If you are currently in education, what type of education?",edu_type,
 attendees,IMD percent,imd_percent,c
 attendees,IMD rank,imd_rank,c
 attendees,Is there anything else you feel we should know about you?,other_info,c
-attendees,Last session,last_session,c
+attendees,Last session,last_session,D
 attendees,Latitude,latitude,d
 attendees,Longitude,longitude,d
 attendees,LSOA code,lsoa_code,c
@@ -73,11 +73,11 @@ attendees,Membership ID/number,membership_id,
 attendees,Mobile,mobile,c
 attendees,Name of education provider,edu_name,c
 attendees,Name of education provider:,edu_name,c
-attendees,No. of exercise sessions of 30 mins or more in past month?,exercise_sess_past_month,c
-attendees,No. of exercise sessions of 30 minutes or more in the past month,exercise_sess_past_month,c
-attendees,No. of exercise sessions of 30 minutes or more past month,exercise_sess_past_month,c
-attendees,No. of exercise sessions of 30 minutes or more past month?,exercise_sess_past_month,c
-attendees,No.of exercise sessions of 30 mins or more in past mnth?,exercise_sess_past_month,c
+attendees,No. of exercise sessions of 30 mins or more in past month?,exercise_sess_past_month,cd
+attendees,No. of exercise sessions of 30 minutes or more in the past month,exercise_sess_past_month,cd
+attendees,No. of exercise sessions of 30 minutes or more past month,exercise_sess_past_month,cd
+attendees,No. of exercise sessions of 30 minutes or more past month?,exercise_sess_past_month,cd
+attendees,No.of exercise sessions of 30 mins or more in past mnth?,exercise_sess_past_month,cd
 attendees,Other description,,
 attendees,Other description:,,
 attendees,Other education description,,
@@ -98,8 +98,8 @@ attendees,Referral form: Current symptom/ Concerns,,c
 attendees,Referral form: Current symptoms/ Concerns,,c
 attendees,Referral form: Current symptoms/Concerns,,c
 attendees,Referral form: Other medical concerns note,,c
-attendees,Registered,registered,c
-attendees,Registration Date,registration_date,d
+attendees,Registered,registered,D
+attendees,Registration Date,registration_date,D
 attendees,Religion or faith,religion,c
 attendees,School/College/University,edu_institution,c
 attendees,Session notes,session_notes,c
@@ -122,13 +122,13 @@ attendees,Would you like help getting back into education or finding work,job_se
 attendees,Youth Council information,youth_council_info,c
 session,Activity,activity,c
 session,Activity group,activity_group,c
-session,Date,date,d
+session,Date,date,D
 session,Duration (hrs),duration_hrs,d
 session,Location,location,c
 session,Location ID,location_id,d
 session,Project,project,c
 session,Session ID,session_id,d
-session,Start time,start_time,d
+session,Start time,start_time,t
 session,Status,status,c
 session,Tags,tags,c
 session,Title,title,c

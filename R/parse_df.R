@@ -14,7 +14,8 @@
 #'
 #' @export
 parse_single_database <- function(path) {
-  raw_df <- suppressMessages(readxl::read_excel(path))
+  raw_df <- suppressMessages(readxl::read_excel(path,
+                                                col_types = "text"))
 
   session_df <- parse_session_df(raw_df)
   attendance_df <- parse_attendance_df(raw_df)
@@ -38,12 +39,7 @@ parse_session_df <- function(df) {
     tidyr::pivot_wider(names_from = 1) %>%
     dplyr::select(-"name")
 
-  session_df <- convert_table(session_df, table = "sessions")
-  session_df %>% dplyr::mutate(dplyr::across(c("location_id", "duration_hrs", "date", "start_time", "session_id", "total_participants"),
-                                             as.numeric),
-                               "date" := as.Date(.data[["date"]], origin = "1899-12-30"),
-                               "start_time" = chron::as.times(.data[["start_time"]]))
-
+  convert_table(session_df, table = "sessions")
 }
 
 #' @noRd
@@ -79,9 +75,5 @@ parse_attendee_df <- function(df) {
   ) %>% unname
 
   attendee_df[-c(1:2),] %>%
-    convert_table(table = "attendees") %>%
-    readr::type_convert() %>%
-    dplyr::mutate(dplyr::across(dplyr::any_of(c("dob", "registered", "added_to_upshot", "first_session", "last_session")),
-                                as.Date,
-                                origin = "1899-12-30"))
+    convert_table(table = "attendees")
 }
