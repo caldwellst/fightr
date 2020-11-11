@@ -115,7 +115,7 @@ attendees,Total (sessions attended),total_sessions,d
 attendees,Town,town,c
 attendees,Type,type,c
 attendees,Under 18 years,under_18,c
-attendees,Upload Number (Upshot use only),upload_number,c
+attendees,Upload Number (Upshot use only),upload_number,d
 attendees,Waiver/release of liability,waiver,c
 attendees,Ward,ward,c
 attendees,Would you like help getting back into education or finding work,job_seek_help,c

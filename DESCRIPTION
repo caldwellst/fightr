@@ -25,7 +25,8 @@ Imports:
     magrittr,
     readr,
     rlang,
-    purrr
+    purrr,
+    tibble
 URL: https://github.com/caldwellst/fightr
 BugReports: https://github.com/caldwellst/fightr/issues
 Depends: 

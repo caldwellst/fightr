@@ -39,7 +39,16 @@ parse_session_df <- function(df) {
     tidyr::pivot_wider(names_from = 1) %>%
     dplyr::select(-"name")
 
-  convert_table(session_df, table = "sessions")
+  session_df <- convert_table(session_df, table = "sessions")
+  if ("date" %in% names(session_df)) {
+    year <- lubridate::year(session_df[["date"]])
+    month <- lubridate::month(session_df[["date"]])
+    session <- tibble::add_column(session_df,
+                                  year = year,
+                                  month = month,
+                                  .after = "date")
+  }
+  session_df
 }
 
 #' @noRd
