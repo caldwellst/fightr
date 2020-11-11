@@ -83,6 +83,20 @@ parse_attendee_df <- function(df) {
     !is.na(unlist(attendee_df[1,])) ~ unlist(attendee_df[1,])
   ) %>% unname
 
-  attendee_df[-c(1:2),] %>%
+  attendee_df <- attendee_df[-c(1:2),] %>%
     convert_table(table = "attendees")
+
+  if ("dob" %in% names(attendee_df)) {
+    age <- lubridate::as.period(start = lubridate::interval(attendee_df[["dob"]]),
+                                end = Sys.time)
+    age_years <- lubridate::year(age)
+    age_bins <- cut(age_years,
+                    breaks = c(6, 14, 17, 25, Inf),
+                    labels = c("7-14", "15-17","18-25", "Over 25"))
+    attendee_df <- tibble::add_column(attendee_df,
+                                      age_years = age_years,
+                                      age_bins = age_bins,
+                                      .after = "dob")
+  }
+  attendee_df
 }
