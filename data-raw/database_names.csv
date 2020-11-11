@@ -2,7 +2,7 @@ table,col_names,col_codes,type
 attendance,Attendance ID,attendee_id,d
 attendance,Session ID,session_id,d
 attendees,Accreditation,accrediation,c
-attendees,Added to Upshot,added_to_upshot,D
+attendees,Added to Upshot,added_to_upshot,d
 attendees,Additional medical conditions,,
 attendees,Address line 1,address_line_1,c
 attendees,Address line 2,address_line_2,c
@@ -33,7 +33,7 @@ attendees,Currently enrolled in education or training?,edu_type,c
 attendees,Disability,disability,c
 attendees,Disability note,disability_note,c
 attendees,District,district,c
-attendees,DOB,dob,D
+attendees,DOB,dob,d
 attendees,Edubase URN,edubase_urn,c
 attendees,Education grade level,edu_grade,c
 attendees,Education Grade Level,edu_grade,c
@@ -98,8 +98,8 @@ attendees,Referral form: Current symptom/ Concerns,,c
 attendees,Referral form: Current symptoms/ Concerns,,c
 attendees,Referral form: Current symptoms/Concerns,,c
 attendees,Referral form: Other medical concerns note,,c
-attendees,Registered,registered,D
-attendees,Registration Date,registration_date,D
+attendees,Registered,registered,c
+attendees,Registration Date,registration_date,d
 attendees,Religion or faith,religion,c
 attendees,School/College/University,edu_institution,c
 attendees,Session notes,session_notes,c
@@ -122,13 +122,13 @@ attendees,Would you like help getting back into education or finding work,job_se
 attendees,Youth Council information,youth_council_info,c
 session,Activity,activity,c
 session,Activity group,activity_group,c
-session,Date,date,D
+session,Date,date,d
 session,Duration (hrs),duration_hrs,d
 session,Location,location,c
 session,Location ID,location_id,d
 session,Project,project,c
 session,Session ID,session_id,d
-session,Start time,start_time,T
+session,Start time,start_time,d
 session,Status,status,c
 session,Tags,tags,c
 session,Title,title,c
