@@ -23,9 +23,11 @@ convert_table_type <- function(df, types) {
   )
   for (i in unique(types)) {
     inds <- which(i == types)
-    df <- dplyr::mutate(df,
-                        dplyr::across(inds,
-                                      conversions[[match(i, names(conversions))]]))
+    suppressWarnings(
+      df <- dplyr::mutate(df,
+                          dplyr::across(inds,
+                                        conversions[[match(i, names(conversions))]]))
+    )
   }
   df
 }

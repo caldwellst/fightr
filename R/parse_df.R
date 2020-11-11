@@ -43,10 +43,10 @@ parse_session_df <- function(df) {
   if ("date" %in% names(session_df)) {
     year <- lubridate::year(session_df[["date"]])
     month <- lubridate::month(session_df[["date"]])
-    session <- tibble::add_column(session_df,
-                                  year = year,
-                                  month = month,
-                                  .after = "date")
+    session_df <- tibble::add_column(session_df,
+                                     year = year,
+                                     month = month,
+                                     .after = "date")
   }
   session_df
 }
@@ -87,8 +87,8 @@ parse_attendee_df <- function(df) {
     convert_table(table = "attendees")
 
   if ("dob" %in% names(attendee_df)) {
-    age <- lubridate::as.period(start = lubridate::interval(attendee_df[["dob"]]),
-                                end = Sys.time)
+    age <- lubridate::as.period(lubridate::interval(start = attendee_df[["dob"]],
+                                                    end = Sys.time()))
     age_years <- lubridate::year(age)
     age_bins <- cut(age_years,
                     breaks = c(6, 14, 17, 25, Inf),

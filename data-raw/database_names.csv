@@ -69,7 +69,7 @@ attendees,Last session,last_session,D
 attendees,Latitude,latitude,d
 attendees,Longitude,longitude,d
 attendees,LSOA code,lsoa_code,c
-attendees,Membership ID/number,membership_id,
+attendees,Membership ID/number,membership_id,c
 attendees,Mobile,mobile,c
 attendees,Name of education provider,edu_name,c
 attendees,Name of education provider:,edu_name,c
