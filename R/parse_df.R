@@ -43,9 +43,11 @@ parse_session_df <- function(df) {
   if ("date" %in% names(session_df)) {
     year <- lubridate::year(session_df[["date"]])
     month <- lubridate::month(session_df[["date"]])
+    quarter <- get_quarter(session_df[["date"]])
     session_df <- tibble::add_column(session_df,
                                      year = year,
                                      month = month,
+                                     quarter = quarter,
                                      .after = "date")
   }
   session_df

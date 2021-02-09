@@ -9,6 +9,18 @@ parse_multiple_databases(paths)
 \arguments{
 \item{paths}{File paths to FFP databases}
 }
+\value{
+List with three named components:\preformatted{sessions: data frame of session information
+attendance: data frame of attendee and session attended
+attendees: data frame of attendee details
+}
+}
 \description{
-Load multiple FFP databases
+\code{parse_multiple_databases()} loads in multiple Excel files containing data
+exported from the FFP database and combines them together. This can be used
+to combine databases from different country offices or even from different years.
+Where there are overlapping \code{attendee_id} rows from multiple databases (such
+as data from multiple years), the data are automatically combined. Total columns
+are summed, first session is the earliest, latest session the latest, and other
+columns take the observation from the last database provided in the \code{paths} variable.
 }

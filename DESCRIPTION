@@ -27,7 +27,9 @@ Imports:
     rlang,
     purrr,
     tibble,
-    lubridate
+    lubridate,
+    openxlsx,
+    stringr
 URL: https://github.com/caldwellst/fightr
 BugReports: https://github.com/caldwellst/fightr/issues
 Depends: 
