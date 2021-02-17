@@ -6,6 +6,17 @@
 #' a list of data frames that will go into the dashboards in R, and also exports
 #' them in Excel to a specified file path.
 #'
+#' The data frames filter data based on a specific set of attributes. Specifically:
+#'
+#' * Open Access filters data for sessions where `project == "Open Access"`
+#' * Employability filters data for sessions where `project == "Employment"`
+#' * Pathways filters data for sessions where `activity_group == "Pathways"`
+#' * Special Project filters data for sessions where `project == "Special Project"`
+#' * Youth leadership filters data for sessions where `project == "Youth Leadership"`
+#'
+#' Relevant columns are then selected for each of these activity groups, written
+#' to Excel, and exported as a list.
+#'
 #' @param pd Parsed database list coming out of [parse_single_database()] or
 #'     [parse_multiple_databases()] with `sessions`, `attendance`,  and `attendees`
 #'     data frames.
@@ -23,11 +34,11 @@ get_pbi_dashboard_data <- function(pd,
   df <- get_full_df(pd)
 
   # Dashboard data frames
-  dfs <- list("open_access" = open_access_df(df),
-              "employability" = employability_df(df),
-              "pathways" = pathways_df(df),
-              "special_project" = special_project_df(df),
-              "youth_leadership" = youth_leadership_df(df))
+  dfs <- list("Open Access" = open_access_df(df),
+              "Employability" = employability_df(df),
+              "Pathways" = pathways_df(df),
+              "Special Project" = special_project_df(df),
+              "Youth leadership" = youth_leadership_df(df))
 
   # Export to Excel
   if (!is.null(file)) {
@@ -67,16 +78,12 @@ open_access_df <- function(df) {
            "Ethnicity" = "ethnicity",
            "Quarter" = "quarter",
            "Activity - Recoded" = "activity")
+
   assert_df(df, nms)
 
-  oa_df <- df %>%
+  df %>%
     dplyr::filter(.data[["project"]] == "Open Access") %>%
-    dplyr::select(nms)
-
-  # Get DB names
-  names(oa_df) <- names(nms)
-
-  oa_df
+    dplyr::select(dplyr::any_of(nms))
 }
 
 #' Get data for the Employability dashboard
@@ -91,12 +98,11 @@ open_access_df <- function(df) {
 employability_df <- function(df) {
   nms <- c("Attendee ID" = "attendee_id",
            "Session ID" = "session_id",
-           "Value" = "value",
            "Activity group" = "activity_group",
            "Activity" = "activity",
            "Date" = "date",
            "Duration (hrs)" = "duration_hrs",
-           "Participants" = "participants",
+           "Participants" = "total_participants",
            "Gender" = "gender",
            "DOB" = "dob",
            "Quarter" = "quarter")
@@ -105,9 +111,7 @@ employability_df <- function(df) {
   emp_df <- df %>%
     dplyr::filter(.data[["project"]] == "Employment") %>%
     dplyr::select(dplyr::any_of(nms)) %>%
-    tibble::add_column("value", .after = "session_id")
-
-  names(emp_df) <- names(nms)
+    tibble::add_column("Value" = "participant", .after = "Session ID")
 }
 
 #' Get data for the Pathways dashboard
@@ -122,23 +126,18 @@ employability_df <- function(df) {
 pathways_df <- function(df) {
   nms <- c("Attendee ID" = "attendee_id",
            "Session ID" = "session_id",
-           "Value" = "value",
            "Activity group" = "activity_group",
            "Activity" = "activity",
            "Date" = "date",
-           "Participants" = "participants",
+           "Participants" = "total_participants",
            "Total (sessions attended)" = "total_sessions",
-           "Gender" = "gender",
-           "DOB" = "dob",
            "Quarter" = "quarter")
-  assert_df(df, nms)
+  assert_df(df, nms[nms != "value"])
 
-  emp_df <- df %>%
+  df %>%
     dplyr::filter(.data[["project"]] == "Open Access") %>%
     dplyr::select(dplyr::any_of(nms)) %>%
-    tibble::add_column("value", .after = "session_id")
-
-  names(emp_df) <- names(nms)
+    tibble::add_column("Value" = "participant", .after = "Session ID")
 }
 
 #' Get data for the Special Project dashboard
@@ -153,23 +152,20 @@ pathways_df <- function(df) {
 special_project_df <- function(df) {
   nms <- c("Attendee ID" = "attendee_id",
            "Session ID" = "session_id",
-           "Value" = "value",
            "Activity group" = "activity_group",
            "Activity" = "activity",
            "Date" = "date",
-           "Participants" = "participants",
+           "Participants" = "total_participants",
            "Total (sessions attended)" = "total_sessions",
            "Total (mins)" = "total_mins",
            "Total (hrs)" = "total_hrs",
            "Quarter" = "quarter")
   assert_df(df, nms)
 
-  sp_df <- df %>%
+  df %>%
     dplyr::filter(.data[["project"]] == "Special Project") %>%
     dplyr::select(dplyr::any_of(nms)) %>%
-    tibble::add_column("value", .after = "session_id")
-
-  names(sp_df) <- names(nms)
+    tibble::add_column("Value" = "participant", .after = "Session ID")
 }
 
 #' Get data for the Youth Leadership dashboard
@@ -184,17 +180,14 @@ special_project_df <- function(df) {
 youth_leadership_df <- function(df) {
   nms <- c("Attendee ID" = "attendee_id",
            "Session ID" = "session_id",
-           "Value" = "value",
            "Activity group" = "activity_group",
            "Activity" = "activity",
            "Date" = "date",
            "Quarter" = "quarter")
   assert_df(df, nms)
 
-  yl_df <- df %>%
+  df %>%
     dplyr::filter(.data[["project"]] == "Youth Leadership") %>%
     dplyr::select(dplyr::any_of(nms)) %>%
-    tibble::add_column("value", .after = "session_id")
-
-  names(yl_df) <- names(nms)
+    tibble::add_column("Value" = "participant", .after = "Session ID")
 }
