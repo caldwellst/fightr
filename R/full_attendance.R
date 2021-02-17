@@ -18,6 +18,8 @@ get_full_df <- function(pd) {
   # Join all data to attendance data frames
   # Gets 1 data frame with 1 row per session and attendee
   dplyr::left_join(pd[["attendance"]],
-                   pd[["attendees"]]) %>%
-    dplyr::left_join(pd[["sessions"]])
+                   pd[["attendees"]],
+                   by = "attendee_id") %>%
+    dplyr::left_join(pd[["sessions"]],
+                     by = "session_id")
 }

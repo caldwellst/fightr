@@ -35,7 +35,8 @@ parse_multiple_databases <- function(paths) {
                                              "total_hrs",
                                              "first_session",
                                              "last_session")),
-                            ~.x[dplyr::n()]))
+                            ~.x[dplyr::n()]),
+                     .groups = "drop")
 
   list(sessions = sessions,
        attendance = attendance,
