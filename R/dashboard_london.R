@@ -1,10 +1,10 @@
-#' Create files necessary for FFP Power BI dashboard
+#' Create files necessary for FFP London's Power BI dashboard
 #'
-#' `get_pbi_dashboard_data()` takes in the parsed databases coming from
+#' `get_pbi_dashboard_london()` takes in the parsed databases coming from
 #' [parse_single_database()] or [parse_multiple_databases()] and produces the
-#' data frames necessary for use in the Power BI dashboards. The function exports
-#' a list of data frames that will go into the dashboards in R, and also exports
-#' them in Excel to a specified file path.
+#' data frames necessary for use in FFP London's Power BI dashboards.
+#' The function exports a list of data frames that will go into the dashboards in R,
+#' and also exports them in Excel to a specified file path.
 #'
 #' The data frames filter data based on a specific set of attributes. Specifically:
 #'
@@ -27,7 +27,7 @@
 #' @return A list of data frames, and Excel file printed to `file`.
 #'
 #' @export
-get_pbi_dashboard_data <- function(pd,
+get_pbi_dashboard_london <- function(pd,
                                    file = NULL,
                                    ...) {
   # Join all data to attendance data frames
