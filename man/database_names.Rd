@@ -5,7 +5,7 @@
 \alias{database_names}
 \title{Names of columns in data frames parsed from the FFP databases.}
 \format{
-A data frame with 134 rows and 4 variables:
+A data frame with 150 rows and 4 variables:
 \describe{
 \item{table}{Table that the name is found in. Either "session", "attendance", and "attendees".}
 \item{col_names}{Original names found in the FFP databases.}

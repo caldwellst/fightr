@@ -1,7 +1,7 @@
 #' Create files necessary for FFP Jamaica's Power BI dashboard
 #'
 #' `get_pbi_dashboard_jamaica()` takes in the parsed databases coming from
-#' [parse_single_database()] or [parse_multiple_databases()] and produces the
+#' [parse_session_database()] or [parse_multiple_session_databases()] and produces the
 #' data frames necessary for use in FFP Jamaica's Power BI dashboards.
 #' The function exports a list of data frames that will go into the dashboards in R,
 #' and also exports them in Excel to a specified file path.
@@ -21,10 +21,10 @@
 #'
 #' @export
 get_pbi_dashboard_jamaica <- function(pd,
-                                     file = NULL,
-                                     ...) {
+                                      file = NULL,
+                                      ...) {
   # Join all data to attendance data frames
-  df <- get_full_df(pd)
+  df <- get_full_session_df(pd)
 
   # Dashboard data frames
 

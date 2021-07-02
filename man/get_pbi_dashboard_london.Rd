@@ -7,8 +7,8 @@
 get_pbi_dashboard_london(pd, file = NULL, ...)
 }
 \arguments{
-\item{pd}{Parsed database list coming out of \code{\link[=parse_single_database]{parse_single_database()}} or
-\code{\link[=parse_multiple_databases]{parse_multiple_databases()}} with \code{sessions}, \code{attendance},  and \code{attendees}
+\item{pd}{Parsed database list coming out of \code{\link[=parse_session_database]{parse_session_database()}} or
+\code{\link[=parse_multiple_session_databases]{parse_multiple_session_databases()}} with \code{sessions}, \code{attendance},  and \code{attendees}
 data frames.}
 
 \item{file}{If not \code{NULL}, file name and path for writing, must end in \code{".xlsx"}.
@@ -21,7 +21,7 @@ A list of data frames, and Excel file printed to \code{file}.
 }
 \description{
 \code{get_pbi_dashboard_london()} takes in the parsed databases coming from
-\code{\link[=parse_single_database]{parse_single_database()}} or \code{\link[=parse_multiple_databases]{parse_multiple_databases()}} and produces the
+\code{\link[=parse_session_database]{parse_session_database()}} or \code{\link[=parse_multiple_session_databases]{parse_multiple_session_databases()}} and produces the
 data frames necessary for use in FFP London's Power BI dashboards.
 The function exports a list of data frames that will go into the dashboards in R,
 and also exports them in Excel to a specified file path.

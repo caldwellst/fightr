@@ -1,6 +1,6 @@
-#' Parse Excel export from the Fight for Peace database
+#' Parse Excel export of session data from the Fight for Peace database
 #'
-#' `parse_single_database()` parses the Fight for Peace database export (from Excel)
+#' `parse_session_database()` parses the Fight for Peace session database export (from Excel)
 #' format into three separate frames, one for attendees, one for sessions, and
 #' one linking attendees to sessions attended.
 #'
@@ -13,7 +13,7 @@
 #'     attendees: data frame of attendee details
 #'
 #' @export
-parse_single_database <- function(path) {
+parse_session_database <- function(path) {
   raw_df <- suppressMessages(readxl::read_excel(path,
                                                 col_types = "text"))
 

@@ -1,5 +1,5 @@
 #' @noRd
-convert_names <- function(x, table = c("sessions", "attendance", "attendees")) {
+convert_names <- function(x, table = c("sessions", "attendance", "attendees", "headcount")) {
   table <- rlang::arg_match(table)
   df <- dplyr::filter(fightr::database_names,
                       .data[["table"]] == table)
@@ -7,7 +7,7 @@ convert_names <- function(x, table = c("sessions", "attendance", "attendees")) {
 }
 
 #' @noRd
-get_col_types <- function(x, table = c("sessions", "attendance", "attendees")) {
+get_col_types <- function(x, table = c("sessions", "attendance", "attendees", "headcount")) {
   table <- rlang::arg_match(table)
   df <- dplyr::filter(fightr::database_names,
                       .data[["table"]] == table)
@@ -33,7 +33,7 @@ convert_table_type <- function(df, types) {
 }
 
 #' @noRd
-convert_table <- function(df, table = c("sessions", "attendance", "attendees")) {
+convert_table <- function(df, table = c("sessions", "attendance", "attendees", "headcount")) {
   table <- rlang::arg_match(table)
   x <- names(df)
   new_x <- convert_names(x, table)

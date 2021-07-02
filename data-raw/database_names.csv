@@ -133,3 +133,19 @@ session,Status,status,c
 session,Tags,tags,c
 session,Title,title,c
 session,Total (participants attended),total_participants,d
+headcount,Project,project,c
+headcount,Activity group,activity_group,c
+headcount,Activity,activity,c
+headcount,Title,title,c
+headcount,Location,location,c
+headcount,Location ID,location_id,d
+headcount,Date,date,D
+headcount,Start time,start_time,t
+headcount,Duration (hrs),duration_hrs,d
+headcount,Status,status,c
+headcount,Session ID,session_id,d
+headcount,Session notes,session_notes,c
+headcount,Head count,headcount,d
+headcount,Male count,male_count,d
+headcount,Female count,female_count,d
+headcount,Age range,age_range,c

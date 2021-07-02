@@ -7,7 +7,7 @@
 pathways_df(df)
 }
 \arguments{
-\item{df}{Full data frame of attendance and session data produced by \code{\link[=get_full_df]{get_full_df()}}.}
+\item{df}{Full data frame of attendance and session data produced by \code{\link[=get_full_session_df]{get_full_session_df()}}.}
 }
 \value{
 A data frame.
